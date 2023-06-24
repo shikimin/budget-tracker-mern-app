@@ -1,0 +1,326 @@
+/*   ----- Imports  -----  */
+  /* Google Fonts */ 
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap');
+    
+    @import "~react-image-gallery/styles/css/image-gallery.css";       
+
+/*   ----- Variables  -----  */
+
+#configButtonContainer {
+  text-align: center;
+  width: 100%;
+}
+
+#configSubmit {
+  display: inline-block;
+  margin: 10px 10px;
+}
+
+
+:root {
+    --darkblue: hsl(221, 93%, 18%);
+    --medblue: hsla(221, 67%, 40%, 0.918);
+    --lightblue: hsl(221, 60%, 85%);
+    --beige: #EDEBD8;
+    --lightorange: #FFDE94;
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {       /* Can alternatively define in html {} or :root {} */
+    background-color: var(--darkblue);
+    background-repeat: repeat;
+    background-position: left top;
+    background-size: contain;
+    color: var(--darkblue);
+    font-family: 'Poppins', sans-serif; /* Define with at least one font name and its related generic family name.*/
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 800px;
+    padding: 1% 0%;
+    max-width: 100%;
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {  
+    background-color: var(--beige);
+    margin: 5px 10px 15px 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 10px;
+    border-style: double;
+  }
+
+  section {
+    background-color: var(--medblue);
+    color: var(--beige);
+    border-radius: 10px;
+    border-style: double;
+    padding: 15px;
+    margin: 0px 10px;
+  }
+    article {
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 15px;
+        margin-left: 0px;
+        margin-right: 30px;
+    }
+
+    article.info {
+      border-radius: 10px;
+      border-style: double;
+      padding: 15px;
+      margin: 20px;
+      padding: 15px;
+      background-color: var(--darkblue);
+    }
+
+    article.searchContainer {
+      display: inline-block;
+      width: 100%;
+    }
+
+  div.App {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+
+  footer {
+    background-color: var(--lightblue);
+    border-radius: 5px;
+    border-style: double;
+    margin: 5%;
+    padding-left: 20px;
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {
+    color: inherit;
+  }
+
+  a:active {
+    background-color: var(--darkblue);
+  }
+
+  a:visited {
+    background-color: var(--darkblue);
+  }
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #020524;
+    overflow-x: hidden;
+    padding-top: 75px;
+  }
+
+  nav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-family:'Playfair Display', serif;
+    font-size: 21px;
+    color: var(--beige);
+    display: block;
+  }
+
+  nav a:hover {
+    background-color: var(--lightblue);
+    color: var(--darkblue);
+    border: 2px solid var(--lightblue);
+  }
+
+  /*  -----  Typography  ----- */
+  p {
+    margin: 10px;
+  }
+  
+  #addButton {
+    text-align: center;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family:'Playfair Display', serif;
+  } 
+
+  h1 {
+    font-size: 50px;
+    margin: 2%
+  }
+
+  h2 {
+    font-size: 40px;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-bottom: double;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 0;
+    
+  }
+
+  strong {
+    color:var(--lightorange)
+  }
+  
+  /*  ----- Table ----- */
+  table {
+    background-color: var(--beige);
+    border-collapse: collapse;
+    color: var(--darkblue);
+    border: 2px double;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  caption {
+    color: var(--lightorange);
+  }
+
+  tr th {
+    font-size: 1.2em;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--lightblue);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--lightblue)
+  }
+
+  tr td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  
+  /*  ----- Form ----- */
+  form {
+    width: 500px;
+    text-align: center;
+    display: inline-block;
+    margin: 0% 5%
+  }
+
+  form#searchForm {
+    float: left;
+    margin-right: 5%;
+  }
+
+  fieldset {
+    background-color: var(--darkblue);
+    color: var(--beige);
+    border: 2px double;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 10px;
+  }
+
+    legend {
+      color: var(--lightorange);
+      font-size: 1.1em;
+    }
+
+  label {
+    display: block;
+    margin-right: 10px;
+  }
+
+  label.required:after {
+    content:" *";
+    color:red;
+    font-size: 110%
+}
+
+  input, button, textarea, select {
+    font-size: 90%;
+    padding: 1%;
+    font-family: inherit;
+  }
+
+  #type {
+    margin-bottom: 2%
+  }
+  
+  :focus {
+    background-color: var(--lightorange);
+  }
+
+  :required {
+    border:3px solid #00C200;
+}
+  
+  ::placeholder {
+    color: var(--darkblue);
+}
+
+/* Stats Page - Progress Bar  */
+#progressContainerMain {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+div#progressContainer {
+  display: flex;
+  margin: 0px 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+div#progress {
+  margin: 25px;
+  width: 190px;
+  float: left;
+  padding: 5px;
+  border-radius: 5%;
+}
+
+div#progressTextBox {
+  text-align: center;
+  margin: 3px;
+  font-size: 20px;
+}
+
+p#progressTextHeader {
+    margin: 0;
+    font-size: 25px;
+}
+
+p#progressText {
+  margin: 0;
+}
+
+.CircularProgressbar {
+  vertical-align: middle;
+  margin: 10px 0px;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: var(--lightorange);
+  font-size: 15px;
+  text-anchor: middle;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #05c7a7;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
