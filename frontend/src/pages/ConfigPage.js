@@ -88,7 +88,7 @@ export const ConfigPage = () => {
     return (
         <>
         <h2>Edit Expense Types</h2>
-            <article class="info">
+            <article className="info">
                 <h3>Info:</h3>
                 <p><strong>Add</strong> an expense type by filling in the Expense Name and Monthly Budget fields and clicking Add.</p>
                 <p><strong>Edit</strong> an expense type by selecting one from the drop down menu, entering the desired change(s) in the Expense Name and/or Monthly Budget fields, and clicking Update.</p>

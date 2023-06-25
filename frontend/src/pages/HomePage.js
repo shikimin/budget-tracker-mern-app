@@ -4,7 +4,7 @@ function HomePage() {
     return (
         <>
             <h2>Welcome!</h2>
-            <article class="info">
+            <article className="info">
                 <p>Welcome to my budget tracker app!</p>
                 
                 <p>Click on <strong>Expense Log</strong> to view pre-populated expenses and expense types. Feel free to edit or delete these expenses.</p>

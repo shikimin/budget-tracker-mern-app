@@ -112,17 +112,17 @@ export const SearchPage = () => {
     return (
         <>
             <h2>Search for Expenses</h2>
-            <article class="info">
+            <article className="info">
                 <h3>Info:</h3>
                 <p>Fill out the fields below to add an entry to the log. All fields must be populated before you click the Add button.</p>
             </article>
 
-            <article class="searchContainer">
+            <article className="searchContainer">
                 <form id="searchForm" onSubmit={(e) => { e.preventDefault();}}>
                     <fieldset>
                         <legend>Search for Expenses</legend>
 
-                        <label for="date">Date of expense</label>
+                        <label htmlFor="date">Date of expense</label>
                         <input
                             type="date"
                             value={fromDate}
@@ -131,7 +131,7 @@ export const SearchPage = () => {
                             id="date" 
                             />
 
-                        <label for="untildate">Date of expense</label>
+                        <label htmlFor="untildate">Date of expense</label>
                         <input
                             type="date"
                             value={untilDate}
@@ -140,7 +140,7 @@ export const SearchPage = () => {
                             id="date" 
                             />
 
-                        <label for="name">Expense name</label>
+                        <label htmlFor="name">Expense name</label>
                         <input
                             type="text"
                             placeholder="Name of the expense"
@@ -149,7 +149,7 @@ export const SearchPage = () => {
                             id="name" 
                             />
 
-                        <label for="cost">From Cost</label>
+                        <label htmlFor="cost">From Cost</label>
                         <input
                             type="number"
                             placeholder="Cost"
@@ -158,7 +158,7 @@ export const SearchPage = () => {
                             id="cost" 
                             />
 
-                        <label for="cost">Until Cost</label>
+                        <label htmlFor="cost">Until Cost</label>
                         <input
                             type="number"
                             placeholder="Cost"
@@ -167,17 +167,17 @@ export const SearchPage = () => {
                             id="cost" 
                             />
 
-                        <label for="type">Expense Type</label>
+                        <label htmlFor="type">Expense Type</label>
                         <select name="type" 
                             value={expenseType}
                             onChange={e => {setExpenseType(e.target.value)}}
                             id="type"
                         >   
                             <option value=""></option>
-                            {types.map(({name, budget}) => <option value={name}>{name}</option>)}
+                            {types.map(({name, budget}, i) => <option value={name} key={i}>{name}</option>)}
                         </select>
 
-                        <label for="submit">
+                        <label htmlFor="submit">
                         <button
                             type="submit"
                             onClick={searchExpenses}
@@ -198,7 +198,7 @@ export const SearchPage = () => {
                     </thead>
                     <tbody>
                         {results.map((results, i) => {
-                            return <tr>
+                            return <tr key={i}>
                                 <td>{results.date.slice(0,10)}</td>
                                 <td>{results.name}</td>
                                 <td>{convertedCost(results.cost)}</td>

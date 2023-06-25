@@ -45,7 +45,7 @@ export const AddExpensePage = () => {
     return (
         <>
             <h2>Add an Expense</h2>
-            <article class="info">
+            <article className="info">
                 <h3>Info:</h3>
                 <p>Fill out the fields below to add an entry to the log. All fields must be populated before you click the Add button.</p>
             </article>
@@ -55,7 +55,7 @@ export const AddExpensePage = () => {
                     <fieldset>
                         <legend>Add an Expense</legend>
 
-                        <label for="date">Date of expense</label>
+                        <label htmlFor="date">Date of expense</label>
                         <input
                             type="date"
                             value={date}
@@ -64,7 +64,7 @@ export const AddExpensePage = () => {
                             id="date" 
                             required/>
 
-                        <label for="name">Expense name</label>
+                        <label htmlFor="name">Expense name</label>
                         <input
                             type="text"
                             placeholder="Name of the expense"
@@ -73,7 +73,7 @@ export const AddExpensePage = () => {
                             id="name" 
                             required/>
 
-                        <label for="cost">Cost</label>
+                        <label htmlFor="cost">Cost</label>
                         <input
                             type="number"
                             placeholder="Cost"
@@ -82,7 +82,7 @@ export const AddExpensePage = () => {
                             id="cost" 
                             required/>
 
-                        <label for="type">Expense Type</label>
+                        <label htmlFor="type">Expense Type</label>
                         <select name="type" 
                             value={expenseType}
                             onChange={e => {setExpenseType(e.target.value)}}
@@ -90,10 +90,10 @@ export const AddExpensePage = () => {
                             required
                         >   
                             <option value=""></option>
-                            {types.map(({name, budget}) => <option value={name}>{name}</option>)}
+                            {types.map(({name, budget}, i) => <option value={name} key={i}>{name}</option>)}
                         </select>
 
-                        <label for="submit">
+                        <label htmlFor="submit">
                         <button
                             type="submit"
                             onClick={addExpense}
