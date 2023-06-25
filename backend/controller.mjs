@@ -1,10 +1,13 @@
 import 'dotenv/config';
 import express from 'express';
 import * as expenses from './model.mjs';
+import cors from 'cors';
 
 const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());  // REST needs JSON MIME type.
+app.use(cors());
+
 
 
 // CREATE controller ******************************************
