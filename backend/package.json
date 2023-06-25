@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "2023",
+  "version": "1.0.0",
   "author": "Minyoung Shin",
   "description": "backend of MERN app for expense tracker",
   "main": "controller.mjs",
